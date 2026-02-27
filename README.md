@@ -32,6 +32,5 @@ services:
 ---
 
 ## 📂 目录结构
-
-agent-service在/opt/jiushunyun中
----
+/opt/jiushuyun 目录结构说明
+该目录为九数云本地宝服务的安装根目录，包含了程序运行的核心二进制文件、依赖库及环境配置。
