@@ -1,2 +1,36 @@
-# jiushuyun-docker
-九数云 Agent 容器化方案，支持 GitHub Actions 每日自动构建与镜像托管。
+# Jiushuyun Agent Service (Docker)
+
+本项目用于将 **九数云 (Jiushuyun) 本地宝** 代理服务容器化。通过 GitHub Actions 实现每日定时构建，确保镜像环境的安全与更新，并自动推送到 GitHub Container Registry (GHCR)。
+
+## 🚀 快速开始
+
+### 1. 镜像地址
+```bash
+docker pull ghcr.io/awsl1110/jiushuyun-docker:latest
+```
+
+### 2. 使用 Docker Compose 部署
+
+在服务器上创建目录并编写 `docker-compose.yml`：
+
+```yaml
+services:
+  jiushuyun:
+    image: ghcr.io/awsl1110/jiushuyun-docker:latest
+    container_name: jiushuyun_app
+    restart: always
+    network_mode: "host"
+    volumes:
+      - /jiushuyun/config:/opt/jiushuyun/config  # 配置文件持久化
+      - /jiushuyun/data:/mnt/data                # 数据目录
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+```
+
+---
+
+## 📂 目录结构
+agent-service在/opt/jiushunyun
+---
