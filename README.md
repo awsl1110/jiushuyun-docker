@@ -7,8 +7,7 @@
 ### 1. 拉取镜像
 
 ```bash
-docker pull ghcr.io/awsl1110/jiushuyun-docker:latest
-
+docker pull ghcr.io/awsl1110/jiushuyun-agent_service:latest
 ```
 
 ### 2. 使用 Docker Compose 部署
@@ -18,7 +17,7 @@ docker pull ghcr.io/awsl1110/jiushuyun-docker:latest
 ```yaml
 services:
   jiushuyun:
-    image: ghcr.io/awsl1110/jiushuyun-docker:latest
+    image: ghcr.io/awsl1110/jiushuyun-agent_service:latest
     container_name: jiushuyun_app
     restart: always
     network_mode: "host"
